@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Android studio Eclipse template
+.gradle
+.idea
+.settings
+bin
+build
+gen
+.classpath
+.project
+local.properties
+*.iml
