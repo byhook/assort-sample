@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_back"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#aa000000"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/sideBar">
+
+        <ListView
+            android:id="@+id/lv_home"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <TextView
+            android:id="@+id/dialog"
+            android:layout_width="80.0dip"
+            android:layout_height="80.0dip"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textSize="30.0dip"
+            android:visibility="invisible"
+            android:background="@drawable/text_dialog_shape"
+            />
+
+    </FrameLayout>
+
+    <sample.byhook.view.SideBar
+        android:id="@+id/sideBar"
+        android:layout_width="30.0dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right|center" />
+</RelativeLayout>
