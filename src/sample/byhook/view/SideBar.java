@@ -146,14 +146,9 @@ public class SideBar extends View {
 		this.onTouchingLetterChangedListener = onTouchingLetterChangedListener;
 	}
 
-	/**
-	 * 接口
-	 * 
-	 * @author coder
-	 * 
-	 */
+
 	public interface OnTouchingLetterChangedListener {
-		public void onTouchingLetterChanged(String s);
+		void onTouchingLetterChanged(String s);
 	}
 
 }

@@ -2,12 +2,9 @@ package sample.byhook.adapter;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -30,14 +27,11 @@ public class BaseGridAdapter extends BaseAdapter {
 
     private List<AppBean> bean;
 
-    private PackageManager pm;
-
     public BaseGridAdapter(Context ctx, List<AppBean> bean) {
         this.ctx = ctx;
         this.inflater = LayoutInflater.from(ctx);
         this.bean = bean;
 
-        this.pm = ctx.getPackageManager();
     }
 
     @Override

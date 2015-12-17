@@ -1,12 +1,6 @@
 package sample.byhook.parser;
 
-/**
- * 作者 : byhook
- * 时间 : 15-11-27.
- * 邮箱 : byhook@163.com
- * 功能 :
- * 拼音解析器
- */
+
 public class CharacterParser {
 
     private static int[] pyvalue = new int[] {-20319, -20317, -20304, -20295, -20292, -20283, -20265, -20257, -20242, -20230, -20051, -20036, -20032,

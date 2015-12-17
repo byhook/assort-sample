@@ -1,9 +1,11 @@
 package sample.byhook.assort;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -66,6 +68,9 @@ public class MainActivity extends Activity implements SideBar.OnTouchingLetterCh
 		sideBar.setOnTouchingLetterChangedListener(this);
 	}
 
+	/**
+	 * 分离分类
+	 */
 	private void init(){
 		characterParser = new CharacterParser();
 
@@ -137,13 +142,15 @@ public class MainActivity extends Activity implements SideBar.OnTouchingLetterCh
 	private AppBean[] getAllApp(){
         PackageManager pm = getPackageManager();
 		//获取安装的APP
-		List<ApplicationInfo> apps = pm.getInstalledApplications(0);
+		Intent intent = new Intent(Intent.ACTION_MAIN);
+		intent.addCategory(Intent.CATEGORY_LAUNCHER);
+		List<ResolveInfo> resolveInfos = pm.queryIntentActivities(intent, 0);
 
-		AppBean[] appBeans = new AppBean[apps.size()];
+		AppBean[] appBeans = new AppBean[resolveInfos.size()];
 
 		int index = 0;
 		String title;
-		for(ApplicationInfo info : apps){
+		for(ResolveInfo info : resolveInfos){
 			appBeans[index] = new AppBean();
 
 			title = info.loadLabel(pm).toString();
